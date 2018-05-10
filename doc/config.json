@@ -441,7 +441,9 @@
             "java",
             "m",
             "mm",
-            "xml"
+            "xml",
+            "hxx",
+            "h"
         ],
         "use-htags": false,
         "verbatim-headers": true

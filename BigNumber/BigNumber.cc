@@ -70,6 +70,10 @@ long long BigNumber::value() const noexcept
     return value;
 }
 
+/** @todo Add tests for operator>(const BigNumber& a, const BigNumber& b)
+ *
+ */
+
 bool operator>(const BigNumber& a, const BigNumber& b)
 {
     if (a.value() > b.value())

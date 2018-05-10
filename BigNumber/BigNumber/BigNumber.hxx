@@ -122,8 +122,6 @@ public:
      *  @returns <b>true</b> if (*this > 0)
      *  @returns <b>false</b> otherwise
      *
-     *  @todo Implement bool BigNumber::isPositive() const noexcept
-     *
      */
 
     bool isPositive() const noexcept;
@@ -140,8 +138,6 @@ public:
      *  positive or negative, but not for testing whether it is zero. This is because
      *  the object is an integral type, and for checking if it's zero we will implement
      *  either the (!<object) functionality, or a simple operator == check.
-     *
-     *  @todo Implement bool BigNumber::isPositive() const noexcept
      *
      */
 
@@ -199,7 +195,6 @@ public:
      */
 
     friend bool operator>(const BigNumber& a, const BigNumber& b);
-    // TODO: Add tests for operator>
 };
 
 #endif // BIGNUMBER_H_
