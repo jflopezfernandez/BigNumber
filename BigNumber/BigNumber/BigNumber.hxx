@@ -60,6 +60,10 @@
 #include <vector>
 #endif // STDLIB_VECTOR_INCLUDED
 
+#ifdef ENABLE_GMP
+#include <boost/multiprecision/gmp.hpp>
+#endif
+
 /** @class BigNumber [BigNumber.hxx]
  *
  *  @brief This class is meant to support arithmetic operations on integral
@@ -167,6 +171,35 @@ public:
      */
 
     std::string numberString() const noexcept;
+
+    /** @fn long long value() const noexcept
+     *
+     *  @description Returns a numeric representation of its value for use with other,
+     *  non-BigNumber types. Note that a BigNumber type may hold many times more data
+     *  than can fit in a long long variable. Therefore some error checking must be
+     *  done. The function will return -1 if it's numeric value cannot fit within
+     *  a long long.
+     *
+     *  @returns long long representation of the BigNumber value
+     *  @returns -1 if BigNumber value is greater than long long max
+     *
+     */
+
+    long long value() const noexcept;
+
+    /** @fn bool operator>(const BigNumber& a, const BigNumber& b)
+     *
+     *  @description This function tests whether a given BigNumber object is
+     *  greater than another. If BigNumber object a is greater than BigNumber
+     *  object b, the function returns true. Otherwise it returns false.
+     *
+     *  @returns bool
+     *  @returns (a > b) ? <b>true</b> : <b>false</b>
+     *
+     */
+
+    friend bool operator>(const BigNumber& a, const BigNumber& b);
+    // TODO: Add tests for operator>
 };
 
 #endif // BIGNUMBER_H_

@@ -55,3 +55,27 @@ std::string BigNumber::numberString() const noexcept
 {
     return m_numberString;
 }
+
+long long BigNumber::value() const noexcept
+{
+    // Need to implement operator > to do:
+    // if BigNumber { LONG_LONG_MAX } > *this
+    //     return -1
+    // else
+    //     return ...
+
+    // TODO: Need to do error/bounds checking
+    const auto value = std::stoll(numberString());
+
+    return value;
+}
+
+bool operator>(const BigNumber& a, const BigNumber& b)
+{
+    if (a.value() > b.value())
+    {
+        return true;
+    }
+
+    return false;
+}
