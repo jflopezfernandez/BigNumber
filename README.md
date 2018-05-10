@@ -5,3 +5,8 @@ Building on Limeoats' bignumber library for portability and C++17 features. Main
 Original Author: [Limeoats](https://github.com/Limeoats)
 
 [Project Repository](https://github.com/Limeoats/BigNumber)
+
+
+## Documentation
+
+The doc directory contains the necessary files to generate the documentation using Doxypress. I will be actually including the documentation in a later release; I'm ignoring the directory for now to speed up development push/pulls from remote repo.
